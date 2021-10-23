@@ -1,7 +1,7 @@
 {
-  "name": "react-extension",
+  "name": "chrome-extension-boilerplate",
   "version": "1.0.0",
-  "description": "Chrome extension in React!",
+  "description": "Chrome extension boilerplate in React, TypeScript and Sass!",
   "main": "index.js",
   "scripts": {
     "start": "webpack --watch --progress --config webpack.dev.js",

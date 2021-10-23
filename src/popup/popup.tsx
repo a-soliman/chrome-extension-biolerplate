@@ -5,7 +5,7 @@ import ReactDom from 'react-dom';
 
 const popup = (
   <>
-    <p>Hello World!</p>
+    <img src="./icon.png" alt="" />
   </>
 );
 

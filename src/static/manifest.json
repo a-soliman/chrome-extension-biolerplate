@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "React Extension",
-  "description": "Chrome Extension in React!",
+  "name": "Extension Boilerplate",
+  "description": "Chrome extension boilerplate in React, TypeScript and Sass!",
   "version": "0.0.1",
   "icons": {
     "16": "icon.png",
