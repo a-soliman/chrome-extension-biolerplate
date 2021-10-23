@@ -16,6 +16,10 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
       },
+      {
+        type: 'asset/resource',
+        test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
+      },
     ],
   },
   plugins: [
