@@ -1,15 +1,15 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'cheap-module-source-map',
   entry: {
-    popup: path.resolve('src/popup/popup.tsx'),
+    popup: path.resolve(__dirname, 'src/popup/popup.tsx'),
     options: path.resolve(__dirname, 'src/options/options.tsx'),
     background: path.resolve(__dirname, 'src/background/background.ts'),
-    contentScript: path.resolve(__dirname, 'src/contentScript/contentScript.ts')
+    contentScript: path.resolve(__dirname,'src/contentScript/contentScript.ts'
+    ),
   },
   module: {
     rules: [
@@ -25,6 +25,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false,
+    }),
     new CopyPlugin({
       patterns: [
         {
