@@ -1,9 +1,15 @@
+import './styles.scss';
+
 import React from 'react';
 import ReactDom from 'react-dom';
 
-const test = <p>Hello World!</p>;
+const popup = (
+  <>
+    <p>Hello World!</p>
+  </>
+);
 
 const root = document.createElement('div');
 root.id = 'root';
 document.body.appendChild(root);
-ReactDom.render(test, root);
+ReactDom.render(popup, root);

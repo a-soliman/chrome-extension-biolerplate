@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -18,13 +19,28 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
       },
+      // IMAGES AND ASSETS
       {
         type: 'asset/resource',
-        test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.(jpe?j|gif|png|woff|woff2|eot|ttf|svg)$/,
+      },
+      /* CSS AND MINI */
+      {
+        test: /\.s?css$/i, //load both css and sass
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: '' },
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin(), // minifying css output
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false,
     }),
